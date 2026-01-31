@@ -181,8 +181,10 @@ random cross-validation can produce overly optimistic evaluation results when te
 
 These findings highlight the importance of aligning validation strategy withthe data-generating process, rather than relying solely on model complexity or performance metrics.
 
-
-
+## Reproducibility (minimal)
+- This repo contains the full analysis notebook (`.ipynb`) and the exported PDF report.
+- To reproduce plots/results, open the notebook and run cells top-to-bottom in Jupyter.
+- Note: exact numbers may vary slightly due to random splitting.
 
 
 
