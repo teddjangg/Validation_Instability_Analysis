@@ -89,9 +89,7 @@ Two complementary metrics are used:
 
 For each feature:
 
-\[
-\text{Correlation Gap} = \rho_{\text{train}} - \rho_{\text{test}}
-\]
+**Correlation Gap** = ρₜᵣₐᵢₙ − ρₜₑₛₜ
 
 We further analyze:
 
