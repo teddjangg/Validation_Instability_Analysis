@@ -89,7 +89,8 @@ Two complementary metrics are used:
 
 For each feature:
 
-**Correlation Gap** = ρₜᵣₐᵢₙ − ρₜₑₛₜ
+Correlation Gap (Δρ) is defined as:
+Δρ = ρ_train − ρ_test
 
 We further analyze:
 
