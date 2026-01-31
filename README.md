@@ -5,10 +5,6 @@
 
 ---
 
-**Correlation Stability under Different Data Splitting Strategies**
-
----
-
 ## 🔍 Project Overview
 
 This project investigates **validation instability** caused by different data splitting strategies.
