@@ -144,10 +144,10 @@ Temporal splitting exposes significant instability and fold-wise variance.
 ### Correlation Gap Summary (per fold)
 
 **Random K-Fold Split**
-![kfold_table](<img width="553" height="110" alt="Screenshot 2026-01-31 at 10 32 41 PM" src="https://github.com/user-attachments/assets/7b6085dd-39c5-4939-a1f1-91ceb69bf5c3" />)
+(<img width="553" height="110" alt="Screenshot 2026-01-31 at 10 32 41 PM" src="https://github.com/user-attachments/assets/7b6085dd-39c5-4939-a1f1-91ceb69bf5c3" />)
 
 **Time-Series Split**
-![ts_table](<img width="529" height="112" alt="Screenshot 2026-01-31 at 10 32 30 PM" src="https://github.com/user-attachments/assets/144e81c3-47e6-48c7-9813-d5da4962526d" />)
+(<img width="529" height="112" alt="Screenshot 2026-01-31 at 10 32 30 PM" src="https://github.com/user-attachments/assets/144e81c3-47e6-48c7-9813-d5da4962526d" />)
 
 **Key observation**
 - Time-series split exhibits consistently larger correlation gap magnitude and higher fold-to-fold variability compared to random K-Fold splitting.
