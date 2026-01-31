@@ -107,6 +107,69 @@ Large and unstable gaps indicate poor generalization of statistical relationship
 ```python
 def compute_corr_gap(X, y, splitter):
     """
-    Compute train/test Pearson & Spearman correlations per feature per fold.
-    Gap = correlation_train − correlation_test
+    Compute train/test Pearson & Spearman correlations per feature per fold,
+    and their gaps, using a provided sklearn splitter (e.g., KFold, TimeSeriesSplit).
+
+    'gap' is defined as train minus test correlation.
+
+    Formula: gap = corr_train - corr_test
     """
+```
+---
+## 📊 Results
+
+### Heavy-Tailed Target Distribution
+The target variable (number of shares) exhibits a strongly heavy-tailed distribution, with extreme values far from the median. Such distributions are known to amplify statistical instability and sensitivity to data splitting strategies.
+
+<img width="609" height="437" alt="Heavytailhisto" src="https://github.com/user-attachments/assets/746da4c1-ce9d-4eea-99dd-2e65ae14f05a" />
+<img width="651" height="453" alt="qqplot" src="https://github.com/user-attachments/assets/7c1a8fcd-4a3e-4d96-b471-3625bfa5ba98" />
+
+---
+
+### K-Fold Cross Validation
+Random splitting shows stable correlation structures across folds.
+
+<img width="822" height="391" alt="kfold pearson" src="https://github.com/user-attachments/assets/495bf28a-14cf-4d2d-aade-d4bec10d22bb" />
+<img width="816" height="394" alt="kfold spearman" src="https://github.com/user-attachments/assets/2f65c999-dc4b-43a2-9e55-1dc0ae5d29bd" />
+
+---
+
+### Time Series Split
+Temporal splitting exposes significant instability and fold-wise variance.
+
+<img width="818" height="386" alt="timepearson" src="https://github.com/user-attachments/assets/12d8723c-458f-4f37-85eb-a80186da7352" />
+<img width="819" height="396" alt="timespearman" src="https://github.com/user-attachments/assets/190685ce-33dc-4564-a08f-42683a5c07d8" />
+
+---
+
+### Comparison
+
+Across all experiments, random K-Fold splitting exhibits consistently small correlation gaps with low fold-wise variance, indicating stable feature–target relationships under approximate IID sampling.
+
+In contrast, time-series splitting results in substantially larger correlation gaps and pronounced dispersion across folds. This instability suggests that
+feature–target relationships are not stationary over time, and that random cross-validation masks underlying distribution shifts.
+
+Overall, these results demonstrate that validation stability is highly sensitive to the chosen data splitting strategy, even when identical features and metrics
+are used.
+
+## 💡 Discussion
+
+Although standard exploratory data analysis suggests that the dataset is approximately homogeneous, temporal dependency is primarily an ordering-based
+property and may remain hidden under random shuffling.
+
+Our results indicate that validation instability arises not from model misspecification, but from distributional shifts over time. Consequently,
+random cross-validation can produce overly optimistic evaluation results when temporal structure is implicitly present.
+
+These findings highlight the importance of aligning validation strategy withthe data-generating process, rather than relying solely on model complexity or performance metrics.
+
+
+
+
+
+
+
+
+
+
+
+
