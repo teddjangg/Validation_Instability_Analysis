@@ -1,7 +1,7 @@
 # 📊 Validation Instability Analysis  
 **Random K-Fold appears stable, but TimeSeriesSplit reveals substantial validation instability through large train–test correlation gaps.**
-<img width="612" height="588" alt="Screenshot 2026-01-31 at 10 56 28 PM" src="https://github.com/user-attachments/assets/88579ca0-976f-4956-a01d-2257e78ee023" />
 
+<img width="612" height="588" alt="Screenshot 2026-01-31 at 10 56 28 PM" src="https://github.com/user-attachments/assets/88579ca0-976f-4956-a01d-2257e78ee023" />
 
 ---
 
